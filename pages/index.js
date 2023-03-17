@@ -1,5 +1,6 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Link from "next/link";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -10,41 +11,32 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>Welcome to my recipe page!</h1>
 
         <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
+          Here I will display my three favourite recipes:
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
+          <Link href="../recipes/burger" className={styles.card}>
+            <h3>A classical cheeseburger &rarr;</h3>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Meaty, cheesy, greasy and whole lot of tasty. This american
+              classic is loved by billions for a reason. 🍔
             </p>
+          </Link>
+
+          <a href="../recipes/pizza" className={styles.card}>
+            <h3>A fast and delicous Pizza &rarr;</h3>
+            <p>
+              Don't have enough time but still want something good and easy with
+              minimum prep? This Pizza is for you. 🍕
+            </p>
+          </a>
+
+          <a href="../recipes/ramen" className={styles.card}>
+            <h3>Spicy Miso Ramen &rarr;</h3>
+            <p>Tired of fast ramen? Click here for an easy recipe. </p>
           </a>
         </div>
       </main>
@@ -55,7 +47,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
         </a>
       </footer>
@@ -111,5 +103,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
